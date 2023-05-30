@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-number_ascii = range(97, 123)
+number_ASCII = range(97, 123)
 for i in number_ascii:
-    number_ascii = chr(i)
-    print(number_ascii, end="")    
+    number_ASCII = chr(i)
+    print(number_ASCII, end="")    
