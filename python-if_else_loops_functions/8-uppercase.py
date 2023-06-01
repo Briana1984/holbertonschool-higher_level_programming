@@ -6,6 +6,6 @@ def uppercase(str):
             c = chr(c - 32)
         else:
             c = chr(c)
-        print(f"{c}", end="")
-    print()
+        print("{}".format(i), end="")
+    print("")
     
