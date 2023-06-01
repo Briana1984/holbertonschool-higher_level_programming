@@ -4,5 +4,5 @@ for i in range(0, 10):
         if i == 8 and n == 9:
             print("{}{}".format(i, n), end='')
         else:
-            print("{}{}".format(i, n), end='')
+            print("{}{}, ".format(i, n), end='')
         print("")
