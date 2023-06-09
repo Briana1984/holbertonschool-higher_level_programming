@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 def raise_exception():
-    try:
-        raise TypeError("Exception raised")
-    except TypeError as e:
-        print(e)
+    x = "10"
+    y = 5
+
+    result = x/y
+
+    return result
