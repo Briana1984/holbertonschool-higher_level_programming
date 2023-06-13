@@ -6,11 +6,17 @@ class Square:
     """represent the class"""
 
     def __init__(self, size=0, position=(0, 0)):
+        """Initialize a new Square.
+
+        Args:
+            size (int): The size of the new square.
+        """
         self.__size = size
         self.position = position
 
     @property
     def size(self):
+        """Get the size of the square."""
         return self.__size
 
     @size.setter
@@ -23,10 +29,16 @@ class Square:
 
     @property
     def position(self):
+        """Get the position of the square."""
         return self.__position
 
     @position.setter
     def position(self, value):
+        """Set the size of the square.
+
+        Args:
+            value (int): The new size of the square.
+        """
         if not isinstance(value, tuple) or len(value) != 2 or \
                 not all(isinstance(i, int) for i in value) or \
                 not all(i >= 0 for i in value):
