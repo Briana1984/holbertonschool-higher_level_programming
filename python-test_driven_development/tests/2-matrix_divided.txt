@@ -1,37 +1,40 @@
 
-    Divides all elements of a matrix by a given number.
+   Using ``matrix_divided``
+---------------------
+This is a text file in reStructuredText format.
+It contains a test for the matrix_divided function in the 2-matrix_divided module.
+First import ``matrix_divided`` from the ``2-matrix_divided`` module:
+    Test 00 Open 0-add_integer
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
-    Parameters:
-    matrix (list of lists): The matrix containing integers or floats.
-    div (int or float): The number to divide the matrix elements by.
+    >>> matrix = [[1, 2, 3],[4, 5, 6]]
 
-    Returns:
-    list of lists: A new matrix with elements divided by div.
+Now test:
+    Test 01: One matrix integers passed
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 
-    Raises:
-    TypeError: If matrix is not a list of lists of integers or floats.
-    TypeError: If each row of the matrix does not have the same size.
-    TypeError: If div is not a number (integer or float).
-    ZeroDivisionError: If div is equal to 0.
-
-    Examples:
-    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 2)
-    [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
-
-    >>> matrix_divided([[10, 20], [30, 40], [50, 60]], 5)
-    [[2.0, 4.0], [6.0, 8.0], [10.0, 12.0]]
-
-    >>> matrix_divided([[1, 2], [3, 4, 5]], 2)
+    Test 02: One matrix divide zero passed
+    >>> matrix_divided(matrix, 0)
     Traceback (most recent call last):
-        ...
-    TypeError: Each row of the matrix must have the same size
+    ...
+    ZeroDivisionError: division by zero
 
-    >>> matrix_divided([[1, 2], [3, 4]], '2')
+    Test 03: One matrix divide  tring
+    >>> matrix_divided(matrix, 'hello')
     Traceback (most recent call last):
-        ...
+    ...
     TypeError: div must be a number
 
-    >>> matrix_divided([[1, 2], [3, 4]], 0)
+    Test 04: One matrix divide None
+    >>> matrix_divided(matrix, None)
     Traceback (most recent call last):
-        ...
-    ZeroDivisionError: division by zero
+    ...
+    TypeError: div must be a number
+
+    Test 05: One matrix dot list
+    >>> matrix = 'hello'
+    >>> matrix_divided(matrix, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
