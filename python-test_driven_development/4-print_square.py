@@ -1,12 +1,18 @@
 #!/usr/bin/python3
+""" square with the character #"""
 
 
-def say_my_name(first_name, last_name=""):
-    if not isinstance(first_name, str):
-        raise TypeError("first_name must be a string")
-
-    if not isinstance(last_name, str):
-        raise TypeError("last_name must be a string")
-
-    full_name = first_name + " " + last_name if last_name else first_name
-    print("My name is", full_name)
+def print_square(size):
+    """
+    Parameters: size of square
+    """
+    if type(size) is not int:
+        raise TypeError("size must be an integer")
+    elif size < 0:
+        raise ValueError("size must be >= 0")
+    else:
+        if size == 0:
+            return
+        else:
+            for i in range(size):
+                print("#" * size)
