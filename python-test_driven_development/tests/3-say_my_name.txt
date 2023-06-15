@@ -34,3 +34,12 @@ Now test:
     Traceback (most recent call last):
     ...
     TypeError: first_name must be a string
+    Test 05: test arguments being strings
+    >>> say_my_name("cathe", "Rivera")
+    My name is Cathe Rivera
+
+    Test 06: test second argument being Null
+    >>> say_my_name("Cathe", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
