@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 
 def say_my_name(first_name, last_name=""):
@@ -13,11 +13,30 @@ def say_my_name(first_name, last_name=""):
         TypeError: _description_
     """
     if not isinstance(first_name, str):
-        raise TypeError("first_name must be a string")
+        """_summary_
 
+        Args:
+            str (_type_): _description_
+
+        Raises:
+            TypeError: _description_
+        """
+        raise TypeError('first_name must be a string')
     if not isinstance(last_name, str):
-        raise TypeError("last_name must be a string")
+        """_summary_
+
+        Args:
+            str (_type_): _description_
+
+        Raises:
+            TypeError: _description_
+        """
+        raise TypeError('last_name must be a string')
     if first_name:
+        """_summary_
+        """
         print("My name is {}".format(first_name))
     else:
+        """_summary_
+        """
         print("My name is {}".format(last_name))
