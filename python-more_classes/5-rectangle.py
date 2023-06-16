@@ -68,7 +68,6 @@ class Rectangle:
         """new instance based on representation"""
         return "Rectangle(" + str(self.width) + ", " + str(self.height) + ")"
 
-
     def __del__(self):
         """destructor"""
         print("Bye rectangle...")
