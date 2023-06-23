@@ -1,18 +1,19 @@
 #!/usr/bin/python3
-"""
-create the file
-"""
+'''function that reads a text file (UTF8) and prints it to stdout'''
 
 
 def write_file(filename="", text=""):
     """
-    create the file and write
+    write a UTF-8 encoded text file and prints it to stdout.
+
+    Arguments:
+    - filename (str): The name of the file to read (optional). If not provided,
+      an empty string is assumed.
+
+    No file permission or file existence exceptions are handled, as the 'with'
+    statement is used.
     """
-    with open(filename, 'w', encoding="utf-8") as f:
-        f.write(text)
-        wordlist = text.split(', ')
-    numb_char = 0
-    for word in wordlist:
-        for char in word:
-            numb_char += 1
-    return numb_char
+
+    with open(filename, "w", encoding="utf-8") as archivo:
+        num_char = archivo.write(text)
+        return num_char
