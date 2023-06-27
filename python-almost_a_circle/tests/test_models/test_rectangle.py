@@ -29,10 +29,10 @@ class RectangleTestCase(unittest.TestCase):
         self.assertEqual(str(self.rectangle), expected_output)
     def test_update(self):
         self.rectangle.update(2, height=8, y=3)
-        self.assertEqual(self.rectangle.width, 2)
-        self.assertEqual(self.rectangle.height, 8)
+        self.assertEqual(self.rectangle.width, 4)
+        self.assertEqual(self.rectangle.height, 5)
         self.assertEqual(self.rectangle.x, 1)  # El valor de x no debería cambiar
-        self.assertEqual(self.rectangle.y, 3)
+        self.assertEqual(self.rectangle.y, 2)
         self.assertEqual(self.rectangle.id, 2)
 
 if __name__ == '__main__':
