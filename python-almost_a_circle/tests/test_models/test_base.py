@@ -1,6 +1,7 @@
-#!/usr/bin/python3
 import unittest
+
 from models.base import Base
+
 
 class BaseTestCase(unittest.TestCase):
     def test_id_generation(self):
