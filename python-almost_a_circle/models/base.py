@@ -22,7 +22,7 @@ class Base:
         """function json_string for list dictionary"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
-        
+
         json_string = "["
         for i, dictionary in enumerate(list_dictionaries):
             json_string += "{"
