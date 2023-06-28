@@ -26,7 +26,7 @@ class Square(Rectangle):
         '''Enter the attributes'''
         self.width = value
         self.height = value
-        
+
     def update(self, *args, **kwargs):
         """number of arguments"""
         argc = len(args)
