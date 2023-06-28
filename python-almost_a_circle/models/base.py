@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """manage id"""
+import json
 
 
 class Base:
