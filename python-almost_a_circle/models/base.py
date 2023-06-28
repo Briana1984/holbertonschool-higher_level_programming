@@ -21,7 +21,6 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-   
     @staticmethod
     def to_json_string(list_dictionaries):
         """
@@ -33,6 +32,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """string"""
         import json
         if json_string is None or len(json_string) == 0:
             return []
