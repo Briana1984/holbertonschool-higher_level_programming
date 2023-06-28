@@ -1,20 +1,14 @@
 #!/usr/bin/python3
-"""class """
-import json
+"""manage id"""
 
 
 class Base:
-    """
-    This is the base class that manages the id attribute
-    for all other classes in the project.
-    """
+    """ content public arg and constructor"""
+
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """
-        Initializes an instance of the Base class.
-
-        """
+        """ manage id attribute"""
         if id is not None:
             self.id = id
         else:
