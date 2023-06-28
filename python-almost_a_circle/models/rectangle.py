@@ -5,13 +5,15 @@ from models.base import Base
 
 class Rectangle(Base):
     """class rectangle inherits Base"""
-    def __init__(self, width, height, x=0, y=0, id=None):
+
+    def __init__(self, width, height, x=0, y=0, id=1):
         """ Constructor"""
         super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        self.id = id
 
     @property
     def width(self):
@@ -93,3 +95,13 @@ class Rectangle(Base):
             for k, v in kwargs.items():
                 if k in modif_attrs:
                     setattr(self, k, v)
+
+    def to_dictionary(self):
+
+        return {
+            'x': self.x,
+            'y': self.y,
+            'id': self.id,
+            'height': self.height,
+            'width': self.width
+        }
