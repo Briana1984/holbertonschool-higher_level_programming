@@ -96,7 +96,9 @@ class Rectangle(Base):
                 if k in modif_attrs:
                     setattr(self, k, v)
 
+    """funtion dictionary"""
     def to_dictionary(self):
+        """return a dictionary"""
 
         return {
             'x': self.x,
