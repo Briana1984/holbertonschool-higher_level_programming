@@ -9,7 +9,7 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """Create constructor"""
 
-    def __init__(self, size, x=0, y=0, id=None):
+    def __init__(self, size, x=0, y=0, id=1):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -43,3 +43,14 @@ class Square(Rectangle):
             for k, v in kwargs.items():
                 if k in modif_attrs:
                     setattr(self, k, v)
+                    
+    """funtion dictionary"""
+    def to_dictionary(self):
+        """return a dictionary"""
+
+        return {
+            'id': self.id,
+            'x': self.x,
+            'size': self.size,
+            'y': self.y,
+        }
