@@ -16,11 +16,18 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-    """metod static"""
     @staticmethod
     def to_json_string(list_dictionaries):
-        """function json_string for list dictionary"""
+        """
+        Returns the JSON string representation of list_dictionaries.
+        """
         if list_dictionaries is None or len(list_dictionaries) == 0:
-            return []
-
+            return "[]"
         return json.dumps(list_dictionaries)
+
+    @staticmethod
+    def from_json_string(json_string):
+        import json
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
