@@ -16,8 +16,10 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    """metod static"""
     @staticmethod
     def to_json_string(list_dictionaries):
+        """function dictionary"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
