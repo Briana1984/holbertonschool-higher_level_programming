@@ -10,6 +10,7 @@ from models.rectangle import Rectangle
 
 class Square(Rectangle):
     '''Square'''
+
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
 
@@ -25,6 +26,7 @@ class Square(Rectangle):
         self.height = value
 
     '''funtion update'''
+
     def update(self, *args, **kwargs):
         '''conditional update'''
         if args:
@@ -47,11 +49,13 @@ class Square(Rectangle):
                 self.y = kwargs["y"]
 
     '''function that str'''
+
     def __str__(self):
         return "[Square] ({}) {}/{} - {}"\
             .format(self.id, self.x, self.y, self.width)
 
     '''function that dictionary'''
+
     def to_dictionary(self):
         '''return dictionary'''
         return {
