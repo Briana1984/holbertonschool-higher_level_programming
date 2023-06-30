@@ -1,57 +1,62 @@
 #!/usr/bin/python3
-"""import class Rectangle"""
+'''import the class base'''
+
+from models.base import Base
 from models.rectangle import Rectangle
 
 
-"""Create class"""
+'''Square'''
 
 
 class Square(Rectangle):
-    """Create constructor"""
-
-    def __init__(self, size, x=0, y=0, id=1):
+    '''Square'''
+    def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
 
-    def __str__(self):
-        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
-
-    '''Method get for size'''
+    '''property'''
     @property
     def size(self):
-        '''return the width'''
         return self.width
-    '''Method set for size'''
+
+    '''setter'''
     @size.setter
     def size(self, value):
-        '''Enter the attributes'''
         self.width = value
         self.height = value
 
+    '''funtion update'''
     def update(self, *args, **kwargs):
-        """number of arguments"""
-        argc = len(args)
-        kwargc = len(kwargs)
-        modif_attrs = ['id', 'size', 'x', 'y']
+        '''conditional update'''
+        if args:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.size = args[1]
+            if len(args) >= 3:
+                self.x = args[2]
+            if len(args) >= 4:
+                self.y = args[3]
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "size" in kwargs:
+                self.size = kwargs["size"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
 
-        if argc > 5:
-            argc = 5
+    '''function that str'''
+    def __str__(self):
+        return "[Square] ({}) {}/{} - {}"\
+            .format(self.id, self.x, self.y, self.width)
 
-        if argc > 0:
-            for i in range(argc):
-                setattr(self, modif_attrs[i], args[i])
-        elif kwargc > 0:
-            for k, v in kwargs.items():
-                if k in modif_attrs:
-                    setattr(self, k, v)
-
-    """funtion dictionary"""
-
+    '''function that dictionary'''
     def to_dictionary(self):
-        """return a dictionary"""
-
+        '''return dictionary'''
         return {
-            'id': self.id,
-            'x': self.x,
-            'size': self.size,
-            'y': self.y,
+            "id": self.id,
+            "size": self.size,
+            "x": self.x,
+            "y": self.y,
         }
